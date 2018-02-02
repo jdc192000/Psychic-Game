@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pyschic-Game</title>
+</head>
+
+<body>
+
+    <h1>The Pyschic Game</h1>
+
+    <p>Guess what letter I'm thinking of</p>
+
+  <div id="game"></div>   
+
+  <script type="text/javascript">
+  
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 10;
+    var computerGuess = Math.floor(Math.random() * 25) + 10;
+    var lettersGuessed = "";
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+
+      // Determines which key was pressed.
+      var userGuess = event.key;
+
+      // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
+  
+
+        // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+        var html =
+           "<p>Computer guess: " + computerGuess + "</p>" +
+          "<p>Wins: " + wins + "</p>" +
+          "<p>Losses: " + losses + "</p>";
+          "<p>Guesses Left: " + guessesLeft + "</p>"
+        // Set the inner HTML contents of the #game div to our html string
+        document.querySelector("#game").innerHTML = html;
+      };
+    
+  </script>
+
+</body>
+
+</html>
